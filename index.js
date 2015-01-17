@@ -142,7 +142,7 @@ Socket.prototype.bind = function (port, address, callback) {
   if (typeof callback === 'function')
     self.once('listening', callback)
 
-  chrome.sockets.udp.create(function (createInfo) {
+  chrome.sockets.udp.create({}, function (createInfo) {
     self.id = createInfo.socketId
 
     sockets[self.id] = self
